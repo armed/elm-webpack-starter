@@ -1,8 +1,8 @@
 {
     "version": "1.0.0",
-    "summary": "Example using `elm-webpack-loader`.",
-    "repository": "https://github.com/moarwick/elm-webpack-starter.git",
-    "license": "MIT",
+    "summary": "E-Diary",
+    "repository": "https://github.com/user/repo.git",
+    "license": "Private",
     "source-directories": [
         "src"
     ],

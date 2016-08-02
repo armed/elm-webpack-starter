@@ -6,8 +6,6 @@ var autoprefixer      = require( 'autoprefixer' );
 var ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 var CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
-console.log( 'WEBPACK GO!');
-
 // detemine build env
 var TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'development';
 
@@ -15,13 +13,13 @@ var TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'd
 var commonConfig = {
 
   output: {
-    path:       path.resolve( __dirname, 'dist/' ),
+    path: path.resolve( __dirname, 'dist/' ),
     filename: '[hash].js',
   },
 
   resolve: {
     modulesDirectories: ['node_modules'],
-    extensions:         ['', '.js', '.elm']
+    extensions: ['', '.js', '.elm']
   },
 
   module: {
@@ -36,7 +34,7 @@ var commonConfig = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: 'assets/index.html',
       inject:   'body',
       filename: 'index.html'
     })
@@ -113,11 +111,11 @@ if ( TARGET_ENV === 'production' ) {
     plugins: [
       new CopyWebpackPlugin([
         {
-          from: 'src/img/',
+          from: 'assets/img/',
           to:   'img/'
         },
         {
-          from: 'src/favicon.ico'
+          from: 'assets/favicon.ico'
         },
       ]),
 
